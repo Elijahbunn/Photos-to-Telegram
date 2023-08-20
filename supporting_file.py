@@ -20,11 +20,6 @@ def download_file(url, params, path):
         file.write(response.content)
 
 
-def collecting_files(directory):
-    files = os.listdir(directory)
-    return files
-
-
 def send_file(path, bot, tg_chat_id):
     with open(path, 'rb') as file:
         bot.send_document(chat_id=tg_chat_id, document=file)

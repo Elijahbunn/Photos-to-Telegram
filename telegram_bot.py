@@ -5,11 +5,11 @@ import random
 import time
 import argparse
 
-from supporting_file import DIRECTORY, collecting_files, send_file
+from supporting_file import DIRECTORY, send_file
 
 
 def send_photos(time_delay):
-    files = collecting_files(DIRECTORY)
+    files = os.listdir(DIRECTORY)
     while True:
         try:
             for image in files:
