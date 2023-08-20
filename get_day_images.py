@@ -31,8 +31,4 @@ if __name__ == '__main__':
     load_dotenv()
     nasa_token = os.environ['NASA_TOKEN']
     Path(DIRECTORY).mkdir(parents=True, exist_ok=True)
-    parser = argparse.ArgumentParser(
-        description='Программа скачивает популярные фотографии из космоса'
-        )
-    args = parser.parse_args()
     get_day_photos(nasa_token)
