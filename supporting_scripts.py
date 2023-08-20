@@ -16,8 +16,11 @@ def set_reading_extension(file_url):
 
 def download_file(url, params, path):
     response = requests.get(url, params=params)
-    with open(path, 'wb') as file:
-        file.write(response.content)
+    if 'error' in response.json():
+        raise requests.exceptions.HTTPError(response.json()['error'])
+    else:
+        with open(path, 'wb') as file:
+            file.write(response.content)
 
 
 def send_file(path, bot, tg_chat_id):
