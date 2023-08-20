@@ -6,7 +6,7 @@ import os.path
 DIRECTORY = 'images'
 
 
-def reading_extension(file_url):
+def set_reading_extension(file_url):
     encoded_string = urllib.parse.unquote(file_url)
     url_parts = urllib.parse.urlsplit(encoded_string)
     path = url_parts.path
