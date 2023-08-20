@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 import requests
 
-from supporting_file import DIRECTORY, set_reading_extension, download_file
+from supporting_scripts import DIRECTORY, set_reading_extension, download_file
 
 
 def get_day_photos(nasa_token):

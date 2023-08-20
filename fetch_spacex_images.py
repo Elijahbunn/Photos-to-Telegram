@@ -5,7 +5,7 @@ import logging
 
 import requests
 
-from supporting_file import DIRECTORY, download_file
+from supporting_scripts import DIRECTORY, download_file
 
 
 def fetch_spacex_launch(launch_id):

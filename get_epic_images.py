@@ -6,7 +6,7 @@ import os
 import requests
 from dotenv import load_dotenv
 
-from supporting_file import DIRECTORY, download_file
+from supporting_scripts import DIRECTORY, download_file
 
 
 def get_epic_images(nasa_token):

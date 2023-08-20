@@ -4,7 +4,7 @@ import os
 import random
 import argparse
 
-from supporting_file import DIRECTORY, send_file
+from supporting_scripts import DIRECTORY, send_file
 
 
 if __name__ == '__main__':

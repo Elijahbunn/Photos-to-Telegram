@@ -5,7 +5,7 @@ import random
 import time
 import argparse
 
-from supporting_file import DIRECTORY, send_file
+from supporting_scripts import DIRECTORY, send_file
 
 
 def send_photos(time_delay):
