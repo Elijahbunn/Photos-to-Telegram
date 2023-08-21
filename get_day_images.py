@@ -1,11 +1,10 @@
-import argparse
 from pathlib import Path
 import os
 from dotenv import load_dotenv
 
 import requests
 
-from supporting_scripts import DIRECTORY, set_reading_extension, download_file
+from supporting_scripts import DIRECTORY, get_reading_extension, download_file
 
 
 def get_day_photos(nasa_token):
@@ -19,7 +18,7 @@ def get_day_photos(nasa_token):
     launches = response.json()
     for photo_number, photo in enumerate(launches):
         if photo['media_type'] == 'image':
-            extension = set_reading_extension(photo['url'])
+            extension = get_reading_extension(photo['url'])
             path = os.path.join(
                 DIRECTORY,
                 f'nasa_apod_{photo_number}{extension}'
