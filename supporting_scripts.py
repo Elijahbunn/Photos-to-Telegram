@@ -1,5 +1,6 @@
 import requests
 import urllib.parse
+from urllib.error import HTTPError
 import os.path
 import logging
 
@@ -16,10 +17,12 @@ def get_reading_extension(file_url):
 
 
 def download_file(url, params, path):
-    response = requests.get(url, params=params)
-    if 'error' in response.json():
+    try:
+        response = requests.get(url, params=params)
+        response.raise_for_status()
+    except 'error' in response.json():
         raise requests.exceptions.HTTPError(response.json()['error'])
-    elif response.status_code == 404 or response.status_code == 403 or response.status_code == 500:
+    except HTTPError:
         logging.warning(
             'Указан неправильный адрес'
         )
